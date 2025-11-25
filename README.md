@@ -1,1 +1,1 @@
-https://github.com/rohit7388/mad-lab
+https://tinyurl.com/6969mad

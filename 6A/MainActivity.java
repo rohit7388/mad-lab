@@ -1,5 +1,3 @@
-package com.example.a8;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         EditText num=findViewById(R.id.editText1);
         EditText msg=findViewById(R.id.editText2);
         Button btn= findViewById(R.id.button);
@@ -31,13 +30,11 @@ public class MainActivity extends AppCompatActivity {
                 String mesg=msg.getText().toString();
                 Intent i=new Intent(Intent.ACTION_VIEW, Uri.parse("sms:"+phone));
                 i.putExtra("sms_body",mesg);
-                try {
-                    startActivity(i);
-                } catch (android.content.ActivityNotFoundException ex) {
+                try {startActivity(i);}
+                catch (android.content.ActivityNotFoundException ex) {
                     Toast.makeText(MainActivity.this, "Permission denied",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
+                            Toast.LENGTH_SHORT).show();}}
+
 
         });
     }
